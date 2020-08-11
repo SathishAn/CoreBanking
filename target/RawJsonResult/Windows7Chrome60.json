@@ -1,0 +1,181 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 456324800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BaseTestSetup_Glue.beforeCucumber(Scenario)"
+            }
+          }
+        ],
+        "line": 33,
+        "name": "Individual Customer creation |~ \"TC01_T24_Create Individual Customer_Male\" |@ \"Individual_Customer\"",
+        "description": "",
+        "id": "individual-customer-creation;individual-customer-creation-|~-\u003ctestname\u003e-|@-\u003csheetname\u003e;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1579500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BaseTestSetup_Glue.testAfter()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 8447241700,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 6,
+                "value": "#@CustomerCreation"
+              }
+            ],
+            "line": 8,
+            "name": "Launch the \"T24\" appliaction",
+            "match": {
+              "arguments": [
+                {
+                  "val": "T24",
+                  "offset": 12
+                }
+              ],
+              "location": "T24_SignIn_Glue.launch_the_Application(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4038875300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I sign in with \"adminUser\" user",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminUser",
+                  "offset": 16
+                }
+              ],
+              "location": "T24_SignIn_Glue.i_sign_in_with_user(String)"
+            },
+            "keyword": "When "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@Regression"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 46356800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BaseTestSetup_Glue.beforeCucumber(Scenario)"
+            }
+          }
+        ],
+        "line": 34,
+        "name": "Individual Customer creation |~ \"TC02_T24_Create Individual Customer_Female\" |@ \"Individual_Customer\"",
+        "description": "",
+        "id": "individual-customer-creation;individual-customer-creation-|~-\u003ctestname\u003e-|@-\u003csheetname\u003e;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 116500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BaseTestSetup_Glue.testAfter()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 7880924000,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 6,
+                "value": "#@CustomerCreation"
+              }
+            ],
+            "line": 8,
+            "name": "Launch the \"T24\" appliaction",
+            "match": {
+              "arguments": [
+                {
+                  "val": "T24",
+                  "offset": 12
+                }
+              ],
+              "location": "T24_SignIn_Glue.launch_the_Application(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5356480600,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I sign in with \"adminUser\" user",
+            "match": {
+              "arguments": [
+                {
+                  "val": "adminUser",
+                  "offset": 16
+                }
+              ],
+              "location": "T24_SignIn_Glue.i_sign_in_with_user(String)"
+            },
+            "keyword": "When "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@Regression"
+          }
+        ]
+      }
+    ],
+    "name": "Individual Customer creation",
+    "description": "",
+    "id": "individual-customer-creation",
+    "keyword": "Feature",
+    "uri": "IndividualCustomerCreation.feature"
+  }
+]  ]
+      }
+    ],
+    "name": "Individual Customer creation",
+    "description": "",
+    "id": "individual-customer-creation",
+    "keyword": "Feature",
+    "uri": "IndividualCustomerCreation.feature"
+  }
+]

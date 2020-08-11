@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- report theme -->
+        <!-- standard, dark -->
+        <theme>dark</theme>
+    
+        <!-- document encoding -->
+        <!-- defaults to UTF-8 -->
+        <encoding>UTF-8</encoding>
+        
+        <!-- protocol for script and stylesheets -->
+        <!-- defaults to https -->
+        <protocol>https</protocol>
+        
+        <!-- title of the document -->
+        <documentTitle>Core Banking</documentTitle>
+        
+        <!-- report name - displayed at top-nav -->
+        <reportName>iEASY - Execution Report</reportName>
+        
+        <!-- location of charts in the test view -->
+        <!-- top, bottom -->
+        <testViewChartLocation>bottom</testViewChartLocation>
+        
+        <!-- custom javascript -->
+        <scripts>
+            <![CDATA[
+               $(document).ready(function() {
+					var started = $('.suite-started-time').text().replace('-', '/').replace('-', '/');
+					started = started.substr(19, 19);
+					started = started.replace('-', '/').replace('-', '/');
+					started = new Date(started);					
+					var ended = $('.suite-ended-time').text().replace('-', '/').replace('-', '/');
+					ended = ended.replace('-', '/').replace('-', '/')
+					ended = new Date(ended)	
+					var minIncrement = 0;
+					var diff_days, diff_hours, diff_minutes, diff_seconds, totaldiff;
+					diff_seconds= (ended.getSeconds() + 60) - started.getSeconds();
+					
+					if(diff_seconds > 60){
+							diff_seconds = diff_seconds - 60;
+							diff_minutes=  (ended.getMinutes() - started.getMinutes()) + 1 ;
+							
+					}else{
+						diff_minutes=  (ended.getMinutes() - started.getMinutes()) - 1 ;
+					}
+					diff_hours=  ended.getHours() - started.getHours();		
+					totaldiff = diff_hours + 'h ' + diff_minutes + 'm ' + diff_seconds + 's';						
+						
+					$('.logo-container,.dashboard-view,span:contains(v2.41.1),#dashboard-view,[status=fatal],[status=error],[status=warning],[status=skip]').remove();
+					$('#enableDashboard').click()
+					$('#enableDashboard').remove();
+					$('.report-name').before("<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Tech_Mahindra_New_Logo.svg/1280px-Tech_Mahindra_New_Logo.svg.png alt=W3Schools.com style=width:100px;height:30px;display:inline-block>");		
+					$('.report-name').css({"text-align":"center","font-size":"34px", "font-family":"Agency FB"});
+					$('.report-name').width(800);								
+					$('.container').prepend("<div id=dashboard-view_m><div class=card_panel_m><span class=panel_name>Total Test Cases</span><div id=totalCount> </div></div><div class=card_panel_p><span class=panel_name>Passed</span><div id=passCount> </div></div><div class=card_panel_f><span class=panel_name>Failed</span><div id=failCount> </div></div> <div class=card_panel_pp><span class=panel_name>Pass Percentage</span><div id=passPercentage> </div></div> <div class=card_panel_t><span class=panel_name>Total Time Taken</span><div id='OverAllTime'>" + totaldiff + "</div></div></div>");
+					$('#dashboard-view_m').width(1500).height(95);					
+					$('.card_panel_p,.card_panel_m,.card_panel_f,.card_panel_pp,.card_panel_t').width(250).height(100);					
+					$('.card_panel_p,.card_panel_m,.card_panel_f,.card_panel_pp,.card_panel_t').css({"display":"inline-block","box-shadow":"none","padding":"10px","box-sizing":"inherit","text-align":"center" });										
+					$('#totalCount,#passCount,#failCount,#passPercentage, #OverAllTime').width(200).height(100);
+					$('#totalCount,#passCount,#failCount,#passPercentage').css({"font-weight":"400", "font-size":"34px", "box-sizing":"inherit", "text-align":"center", "margin-top": "5px", "display":"inline-block"})					
+					$('#OverAllTime').css({"font-weight":"400", "font-size":"30px", "box-sizing":"inherit", "text-align":"center", "margin-top": "5px", "display":"inline-block"})					
+					$('.panel_name').css({"box-shadow":"none","padding":"25px","box-sizing":"inherit","text-align":"center", "font-size":"20px", "color":"#039be5" });					
+					$('#totalCount').text(totalTests);
+					$('#passCount').text(passedTests);		
+					$('#failCount').text(failedTests);
+					var percentage = Math.round((passedTests/totalTests)*100);
+					$('#passPercentage').text(percentage+"%");					
+					$('#totalCount').css("color","grey");
+					$('#passCount').css("color","#66BB6A");
+					$('#failCount').css("color","#EF5350");
+					$('#passPercentage').css("color","#66BB6A");
+					$('#OverAllTime').css("color","#41b2db");					
+					$('#test-collection').append("<li id='endResult' class='do_Nothing'><div  class='test-head'><span  id='endReport' class='test-name'> ***** End of Test *****</span></div></li>")
+					$('#endReport').css({ "font-size":"16px", "text-align":"center"})										
+					$('#endResult').css({"background-color":"black", "line-height":"3.5"})
+					
+					
+				});					
+               
+               
+            ]]>
+        </scripts>
+        
+        <!-- custom styles -->
+        <styles>
+            <![CDATA[
+                
+            ]]>
+        </styles>
+    </configuration>
+</extentreports>
